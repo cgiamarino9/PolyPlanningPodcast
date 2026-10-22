@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Poly Planning Podcast logo">
+<rect width="400" height="400" fill="#10560d"/>
+<g fill="none" stroke="#ffb000" stroke-width="3">
+<path d="M72 78H230C320 78 340 130 340 175C340 240 300 270 230 270H177V322H72Z"/>
+<path d="M92 97H230C300 97 322 135 322 175C322 225 290 252 230 252H158V303H92Z"/>
+<path d="M110 115H230C285 115 304 140 304 175C304 212 280 234 230 234H140V285H110Z"/>
+<path d="M140 140H230C265 140 280 150 280 175C280 200 265 208 230 208H140Z"/>
+<path d="M158 160H230C245 160 255 162 255 175C255 188 245 190 230 190H158Z"/>
+</g>
+<text x="72" y="352" font-family="Arial,sans-serif" font-size="17" letter-spacing="1" fill="#ffb000">POLY PLANNING PODCAST</text>
+</svg>

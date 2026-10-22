@@ -1,0 +1,13 @@
+:root{--green:#10560d;--gold:#ffb000}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,sans-serif;background:var(--green);color:#fff;line-height:1.6;text-align:center}
+main{max-width:760px;margin:0 auto;padding:2rem 1rem}
+.logo{width:min(320px,80%);height:auto}
+h1{color:var(--gold)}
+.tags{color:var(--gold);font-weight:bold;letter-spacing:.1em}
+.button{display:inline-block;margin-top:1.5rem;padding:.8rem 1.6rem;background:var(--gold);color:var(--green);font-weight:bold;text-decoration:none;border-radius:6px}
+.button:hover,.button:focus{background:#fff}
+a{color:var(--gold)}
+ul.episodes{list-style:none;padding:0;text-align:left}
+ul.episodes li{background:rgba(0,0,0,.2);margin:1rem 0;padding:1rem;border-radius:6px}
+audio{width:100%;margin-top:.5rem}
