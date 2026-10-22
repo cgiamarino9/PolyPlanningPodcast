@@ -15,6 +15,7 @@
             --cream: #f7f5ee;
             --coral: #e98b6c;
             --muted: #56645a;
+            --border-color: #dce1d8;
         }
         
         * {
@@ -39,12 +40,35 @@
         
         header {
             padding: 1.35rem clamp(1.25rem, 6vw, 5.5rem);
-            border-bottom: 1px solid #dce1d8;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .site-title {
             color: var(--green);
             font-size: .85rem;
             font-weight: 600;
             letter-spacing: .13em;
             text-transform: uppercase;
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--green);
+            text-decoration: none;
+            font-size: .85rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            padding: .4rem .8rem;
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+        
+        nav a:hover {
+            background: #e8e4d8;
         }
         
         main {
@@ -90,6 +114,32 @@
             line-height: 1.75;
         }
         
+        .actions {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background: var(--green);
+            color: var(--cream);
+            padding: .85rem 1.6rem;
+            border-radius: 8px;
+            font-size: .95rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: .02em;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #103227;
+            transform: translateY(-2px);
+        }
+        
         .departments {
             display: flex;
             flex-wrap: wrap;
@@ -125,7 +175,7 @@
         
         footer {
             padding: 1.25rem clamp(1.25rem, 6vw, 5.5rem);
-            border-top: 1px solid #dce1d8;
+            border-top: 1px solid var(--border-color);
             color: #657067;
             font-size: .78rem;
         }
@@ -151,12 +201,22 @@
 
 <body>
     <div class="page">
-        <header>Poly Planning Podcast</header>
+        <header>
+            <a href="index.html" class="site-title">Poly Planning Podcast</a>
+            <nav>
+                <a href="episodes.html">Podcast Episodes</a>
+            </nav>
+        </header>
         <main>
             <section aria-labelledby="welcome-title">
                 <p class="eyebrow">Scrutinize · Speculate · Spatialize</p>
                 <h1 id="welcome-title">Planning a more just <span>future.</span></h1>
                 <p class="description">Learning by podcasting. A repository for planners’ ideas and actions in pursuit of social-spatial justice. Planner interviews by MURP students.</p>
+
+                <div class="actions">
+                    <a href="episodes.html" class="btn-primary">Browse Fall 2025 Episodes →</a>
+                </div>
+
                 <div class="departments" aria-label="Programs"><span>URP</span><span>ENV</span><span>CPP</span></div>
             </section>
             <div class="logo-frame">
