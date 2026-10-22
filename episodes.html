@@ -157,11 +157,18 @@
             align-items: center;
             gap: 1.25rem;
         }
+        /* Controls Cluster */
+        
+        .sc-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
         
         .sc-play-btn {
-            width: 52px;
-            height: 52px;
-            min-width: 52px;
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
             border-radius: 50%;
             background: var(--coral);
             border: none;
@@ -182,6 +189,45 @@
             width: 22px;
             height: 22px;
             fill: currentColor;
+        }
+        
+        .sc-skip-btn {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.15s ease, transform 0.15s ease;
+        }
+        
+        .sc-skip-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
+        }
+        
+        .sc-skip-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+        
+        .sc-skip-btn span {
+            position: absolute;
+            font-size: 0.45rem;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            line-height: 1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -42%);
+            pointer-events: none;
         }
         
         .sc-track-info {
@@ -347,10 +393,20 @@
                     <div class="sc-player" data-duration="28:45">
                         <audio class="sc-audio" src=""></audio>
                         <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
+                            <div class="sc-controls">
+                                <button class="sc-skip-btn sc-skip-back" aria-label="Rewind 15 seconds" title="Rewind 15s">
+                                    <svg viewBox="0 0 24 24"><path d="M12.5 3C7.25 3 3 7.25 3 12.5S7.25 22 12.5 22c3.15 0 5.95-1.52 7.68-3.88l-1.63-1.23C17.15 18.8 14.97 20 12.5 20 8.36 20 5 16.64 5 12.5S8.36 5 12.5 5c2.37 0 4.5 1.1 5.9 2.82L15 11h7V4l-2.73 2.73C17.47 4.55 15.15 3 12.5 3z"/></svg>
+                                    <span>15</span>
+                                </button>
+                                <button class="sc-play-btn" aria-label="Play Episode">
+                                    <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                                </button>
+                                <button class="sc-skip-btn sc-skip-fwd" aria-label="Fast Forward 15 seconds" title="Forward 15s">
+                                    <svg viewBox="0 0 24 24"><path d="M11.5 3c5.25 0 9.5 4.25 9.5 9.5s-4.25 9.5-9.5 9.5c-3.15 0-5.95-1.52-7.68-3.88l1.63-1.23C6.85 18.8 9.03 20 11.5 20c4.14 0 7.5-3.36 7.5-7.5S15.64 5 11.5 5c-2.37 0-4.5 1.1-5.9 2.82L9 11H2V4l2.73 2.73C6.53 4.55 8.85 3 11.5 3z"/></svg>
+                                    <span>15</span>
+                                </button>
+                            </div>
                             <div class="sc-track-info">
                                 <div class="sc-track-tag">Poly Planning Podcast</div>
                                 <div class="sc-track-name">Episode 1 · Christopher Pina</div>
@@ -381,10 +437,20 @@
                     <div class="sc-player" data-duration="31:10">
                         <audio class="sc-audio" src=""></audio>
                         <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
+                            <div class="sc-controls">
+                                <button class="sc-skip-btn sc-skip-back" aria-label="Rewind 15 seconds" title="Rewind 15s">
+                                    <svg viewBox="0 0 24 24"><path d="M12.5 3C7.25 3 3 7.25 3 12.5S7.25 22 12.5 22c3.15 0 5.95-1.52 7.68-3.88l-1.63-1.23C17.15 18.8 14.97 20 12.5 20 8.36 20 5 16.64 5 12.5S8.36 5 12.5 5c2.37 0 4.5 1.1 5.9 2.82L15 11h7V4l-2.73 2.73C17.47 4.55 15.15 3 12.5 3z"/></svg>
+                                    <span>15</span>
+                                </button>
+                                <button class="sc-play-btn" aria-label="Play Episode">
+                                    <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                                </button>
+                                <button class="sc-skip-btn sc-skip-fwd" aria-label="Fast Forward 15 seconds" title="Forward 15s">
+                                    <svg viewBox="0 0 24 24"><path d="M11.5 3c5.25 0 9.5 4.25 9.5 9.5s-4.25 9.5-9.5 9.5c-3.15 0-5.95-1.52-7.68-3.88l1.63-1.23C6.85 18.8 9.03 20 11.5 20c4.14 0 7.5-3.36 7.5-7.5S15.64 5 11.5 5c-2.37 0-4.5 1.1-5.9 2.82L9 11H2V4l2.73 2.73C6.53 4.55 8.85 3 11.5 3z"/></svg>
+                                    <span>15</span>
+                                </button>
+                            </div>
                             <div class="sc-track-info">
                                 <div class="sc-track-tag">Poly Planning Podcast</div>
                                 <div class="sc-track-name">Episode 2 · Graham Rossmore</div>
@@ -404,619 +470,6 @@
                     </div>
                 </article>
 
-                <!-- Episode 3 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 3 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Michelle Rivera, Grassroots Planner</h2>
-                    <p class="episode-description">
-                        Marciel Andrade (MURP 2027) interviews Michelle Rivera, a grassroots planner working with Public Matters and the Thai Community Development Center. They discussed bilingual outreach, effective community engagement, political and financial constraints,
-                        and co-production to build and learn from residents' skills and knowledge.
-                    </p>
-                    <div class="sc-player" data-duration="26:50">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 3 · Michelle Rivera</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_cc3rpgcd" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 26:50</div>
-                        </div>
-                    </div>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_cc3rpgcd" allowfullscreen frameborder="0" title="Episode 3"></iframe>
-                    </div>
-                </article>
-
-                <!-- Episode 4 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 4 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Candice Assadzadeh, Senior Planner (City of Riverside)</h2>
-                    <p class="episode-description">
-                        Moises Arreola (MURP 2027) interviews Candice Assadzadeh, a Senior Planner for the City of Riverside’s Planning Department. They discussed transactive planning approaches during conceptual reviews, environmental justice, and translation of ideas into
-                        outcomes in the built environment.
-                    </p>
-                    <div class="sc-player" data-duration="29:15">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 4 · Candice Assadzadeh</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_ebxehu2u" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 29:15</div>
-                        </div>
-                    </div>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_ebxehu2u" allowfullscreen frameborder="0" title="Episode 4"></iframe>
-                    </div>
-                </article>
-
-                <!-- Episode 5 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 5 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Ivan Reyes, Planner (City of Paramount)</h2>
-                    <p class="episode-description">
-                        Ricardo Carrillo (MURP 2027) interviews Ivan Reyes, a Planner for the City of Paramount. They discussed the importance of technical knowledge and personal relationships in getting things done, diversity in the just city, and realizing deliberative democracy
-                        by making public meetings inclusive for Spanish-speaking residents.
-                    </p>
-                    <div class="sc-player" data-duration="34:00">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 5 · Ivan Reyes</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_h2sagw1p" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 34:00</div>
-                        </div>
-                    </div>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_h2sagw1p" allowfullscreen frameborder="0" title="Episode 5"></iframe>
-                    </div>
-                </article>
-
-                <!-- Episode 6 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 6 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with John King, Planning and Building Director (City of Paramount)</h2>
-                    <p class="episode-description">
-                        Leslie Corrales (MURP 2027) interviews John King, Planning and Building Director for the City of Paramount. They discussed rational, communicative, and advocacy planning approaches when attempting to empower working-class Latino communities; the reciprocal
-                        relationship between theories and practical judgment; and the need for planners to remain reflexive about their values, institutional goals, and community desires.
-                    </p>
-                    <div class="sc-player" data-duration="32:20">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 6 · John King</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_3rw9ytdj" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 32:20</div>
-                        </div>
-                    </div>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_3rw9ytdj" allowfullscreen frameborder="0" title="Episode 6"></iframe>
-                    </div>
-                </article>
-
-                <!-- Episode 7 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 7 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Tim Bretz, Senior Principal at Keyser Marston Associates</h2>
-                    <p class="episode-description">
-                        Kevin Debacker (MURP 2027) interviews Tim Bretz, a Senior Principal at Keyser Marston Associates. They discussed affordable housing justice, private-public partnerships, and translating complex data and ideas into practical, real-world actions, while
-                        addressing displacement.
-                    </p>
-                    <div class="sc-player" data-duration="27:40">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 7 · Tim Bretz</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_5rjzd93z" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 27:40</div>
-                        </div>
-                    </div>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_5rjzd93z" allowfullscreen frameborder="0" title="Episode 7"></iframe>
-                    </div>
-                </article>
-
-                <!-- Episode 8 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 8 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Jesus Navidad, Transportation Planner (CalTrans)</h2>
-                    <p class="episode-description">
-                        Charles Dinan (MURP 2027) interviews Jesus Navidad, a Transportation Planner for CalTrans. They discussed the different roles a planner adopts in the public and private sector, what planners do on their day-to-day, the various forms of public participation
-                        in shaping transportation policy, the political pressures that encourage oft-used rational planning solutions, and the need for advocacy planning to understand how people use transit infrastructure to improve its functions.
-                    </p>
-                    <div class="sc-player" data-duration="35:10">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 8 · Jesus Navidad</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_0vgbcnwm" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 35:10</div>
-                        </div>
-                    </div>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_0vgbcnwm" allowfullscreen frameborder="0" title="Episode 8"></iframe>
-                    </div>
-                </article>
-
-                <!-- Episode 9 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 9 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Joseph Allen, Staff Transportation Planner (City of College Station, TX)</h2>
-                    <p class="episode-description">
-                        Daniela Flores (MURP 2027) interviews Joseph Allen, a Staff Transportation Planner for the City of College Station, Texas. They discussed switching from the private sector to participate in engaging, community-based active transportation projects; the
-                        importance of adaptable communication and persuasive storytelling to engage different groups and stakeholders in participation processes; and the need to listen reflectively and balance technical knowledge with local knowledge
-                        to improve planning project outcomes.
-                    </p>
-                    <div class="sc-player" data-duration="30:45">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 9 · Joseph Allen</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_7ei5unac" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 30:45</div>
-                        </div>
-                    </div>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_7ei5unac" allowfullscreen frameborder="0" title="Episode 9"></iframe>
-                    </div>
-                </article>
-
-                <!-- Episode 10 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 10 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Troy Evangelho, Advanced Planning Manager (Culver City)</h2>
-                    <p class="episode-description">
-                        Sean Fox (MURP 2027) interviews Troy Evangelho, Culver City’s Advanced Planning Manager. They discussed the Culver City 2045 General Plan, form-based codes, how theories are implicitly practiced, and the planner’s participatory and rational mentality.
-                    </p>
-                    <div class="sc-player" data-duration="25:15">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 10 · Troy Evangelho</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_g1elfnt7" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 25:15</div>
-                        </div>
-                    </div>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_g1elfnt7" allowfullscreen frameborder="0" title="Episode 10"></iframe>
-                    </div>
-                </article>
-
-                <!-- Episode 11 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 11 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Mena Abdul, Associate Planner (City of Duarte)</h2>
-                    <p class="episode-description">
-                        Mariah Garcia (MURP 2027) interviews Mena Abdul, Associate Planner for the City of Duarte. They discussed communicative planning as consensus-building, reliance on technical knowledge related to zoning, the need to balance expertise with clear communication,
-                        and the power relations women confront in a male-dominated environment where principles of honesty, consistency, fairness, and ethics are constantly questioned.
-                    </p>
-                    <div class="sc-player" data-duration="33:10">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 11 · Mena Abdul</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_i5ufj7b7" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 33:10</div>
-                        </div>
-                    </div>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_i5ufj7b7" allowfullscreen frameborder="0" title="Episode 11"></iframe>
-                    </div>
-                </article>
-
-                <!-- Episode 12 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 12 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Alvar De La Torre, Assistant Planner (City of Covina)</h2>
-                    <p class="episode-description">
-                        Martin Gutierrez (MURP 2027) interviews Alvar De La Torre, an Assistant Planner for the City of Covina. They discussed common planning tasks, resolving deliberative conflicts, and the multidisciplinary skills that help to envision equitable futures related
-                        to housing shortages.
-                    </p>
-                    <div class="sc-player" data-duration="28:00">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 12 · Alvar De La Torre</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_isg09wyu" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 28:00</div>
-                        </div>
-                    </div>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_isg09wyu" allowfullscreen frameborder="0" title="Episode 12"></iframe>
-                    </div>
-                </article>
-
-                <!-- Episode 13 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 13 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Devan Wells, Assistant Planner (City of South Pasadena)</h2>
-                    <p class="episode-description">
-                        Carolina Ibarra (MURP 2027) interviews Devan Wells, an Assistant Planner for the City of South Pasadena. They discussed tensions between different scales of planning, advocacy planning being constrained by political pressures, and the requirement to balance
-                        theory and ethics with equitable and adaptable approaches to address evolving needs.
-                    </p>
-                    <div class="sc-player" data-duration="31:45">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 13 · Devan Wells</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_7yytpfit" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 31:45</div>
-                        </div>
-                    </div>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_7yytpfit" allowfullscreen frameborder="0" title="Episode 13"></iframe>
-                    </div>
-                </article>
-
-                <!-- Episode 14 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 14 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Julie Fitch, Planning Manager (John Wayne Airport, OC)</h2>
-                    <p class="episode-description">
-                        Donya Kishawi (MURP 2027) interviews Julie Fitch, the Planning Manager for John Wayne Airport in Orange County, California. They discussed navigating multiple daily roles, ensuring compliance with environmental policies, and working with communities to
-                        mitigate noise and nuisance complaints.
-                    </p>
-                    <div class="sc-player" data-duration="29:50">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 14 · Julie Fitch</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_yja10igw" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 29:50</div>
-                        </div>
-                    </div>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_yja10igw" allowfullscreen frameborder="0" title="Episode 14"></iframe>
-                    </div>
-                </article>
-
-                <!-- Episode 15 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 15 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Paul Herrmann, Senior Associate (Fehr & Peers)</h2>
-                    <p class="episode-description">
-                        Daniel Knott (MURP 2027) interviews Paul Herrmann, Senior Associate and Planning Consultant at Fehr & Peers. They discussed that what planners do is connect people to information about deadlines and expectations, linking technical knowledge to logistical
-                        actions, negotiating and settling competing interests, and persuasive storytelling.
-                    </p>
-                    <div class="sc-player" data-duration="36:10">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 15 · Paul Herrmann</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_krtyoe1g" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 36:10</div>
-                        </div>
-                    </div>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_krtyoe1g" allowfullscreen frameborder="0" title="Episode 15"></iframe>
-                    </div>
-                </article>
-
-                <!-- Episode 16 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 16 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Luca Giaramadaro, Vice President (Multistudio)</h2>
-                    <p class="episode-description">
-                        Henry Lie (MURP 2027) interviews Luca Giaramadaro, Vice President at Multistudio, a multidisciplinary planning firm. They discussed differences in planning education between America and Europe, with the former focusing on technical knowledge and quantitative
-                        methods compared to fluid, multidisciplinary practices; public space justice in transit environments; and ethical issues regarding AI.
-                    </p>
-                    <div class="sc-player" data-duration="33:40">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 16 · Luca Giaramadaro</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_5mwjhyfc" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 33:40</div>
-                        </div>
-                    </div>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_5mwjhyfc" allowfullscreen frameborder="0" title="Episode 16"></iframe>
-                    </div>
-                </article>
-
-                <!-- Episode 17 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 17 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Jackie Martinez, Long Range Planner (City of Glendale)</h2>
-                    <p class="episode-description">
-                        Mike Matzke (MURP 2027) interviews Jackie Martinez, a Long Range Planner of Community Development with the City of Glendale. They discussed argumentation and communication with the Verdugo Wash project, translating technical jargon to different clients,
-                        and the importance of multidisciplinary technical skills in transportation and long-range planning.
-                    </p>
-                    <div class="sc-player" data-duration="27:10">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 17 · Jackie Martinez</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_4gg7t1lj" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 27:10</div>
-                        </div>
-                    </div>
-                    <span class="pending-notice">Recording link coming soon.</span>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_4gg7t1lj" allowfullscreen frameborder="0" title="Episode 17"></iframe>
-                    </div>
-                </article>
-
-                <!-- Episode 18 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 18 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Jonathan Pacheco-Bell, Urban Planner</h2>
-                    <p class="episode-description">
-                        Aaron Mejia (MURP 2027) interviews Jonathan Pacheco-Bell, an urban planner shaping communities across Los Angeles County, with grassroots experience in advocacy planning for Florence-Firestone. They discussed the importance of trust, co-creation, and
-                        procedural justice; the importance of acknowledging historical injustices through equitable solutions today; and translating planning philosophies into placemaking and reclamation of space.
-                    </p>
-                    <div class="sc-player" data-duration="38:20">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 18 · Jonathan Pacheco-Bell</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_mu9lcuzl" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 38:20</div>
-                        </div>
-                    </div>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_mu9lcuzl" allowfullscreen frameborder="0" title="Episode 18"></iframe>
-                    </div>
-                </article>
-
-                <!-- Episode 19 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 19 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Claudia Garcia, Assistant Director of Community Development (City of Vacaville)</h2>
-                    <p class="episode-description">
-                        Humberto Mendez Valadez (MURP 2027) interviews Claudia Garcia, Assistant Director of Community Development for the City of Vacaville. Having met at the APA conference in Monterey, they discussed planners’ knowledge and skill sets as reflective, equity
-                        planning in every step of the planning process, especially including silent voices, and the need to balance aspirational visions with practical outcomes based on realistic constraints.
-                    </p>
-                    <div class="sc-player" data-duration="30:15">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 19 · Claudia Garcia</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_mat1rqvd" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 30:15</div>
-                        </div>
-                    </div>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_mat1rqvd" allowfullscreen frameborder="0" title="Episode 19"></iframe>
-                    </div>
-                </article>
-
-                <!-- Episode 20 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 20 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Jason Garcia-LoBue, Planning & Permit Manager (Tulare County)</h2>
-                    <p class="episode-description">
-                        Nicholas Murphy (MURP 2027) interviews Jason Garcia-LoBue, Planning & Permit Manager for Tulare County. They discussed the technical craft necessary for administrative work, balancing revenue generation with mitigating negative externalities for a collective
-                        good, and programs like Civic Sparks that address historical inequities and environmental injustices.
-                    </p>
-                    <div class="sc-player" data-duration="32:50">
-                        <audio class="sc-audio" src=""></audio>
-                        <div class="sc-player-top">
-                            <button class="sc-play-btn" aria-label="Play Episode">
-                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                            </button>
-                            <div class="sc-track-info">
-                                <div class="sc-track-tag">Poly Planning Podcast</div>
-                                <div class="sc-track-name">Episode 20 · Jason Garcia-LoBue</div>
-                            </div>
-                            <div class="sc-actions">
-                                <button class="sc-btn toggle-video">Watch Video ▾</button>
-                                <a href="https://streaming.cpp.edu/media/t/1_jason_garcia" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                            </div>
-                        </div>
-                        <div class="sc-player-bottom">
-                            <div class="sc-waveform"></div>
-                            <div class="sc-time">0:00 / 32:50</div>
-                        </div>
-                    </div>
-                    <div class="video-drawer">
-                        <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_jason_garcia" allowfullscreen frameborder="0" title="Episode 20"></iframe>
-                    </div>
-                </article>
-
             </div>
         </main>
         <footer>
@@ -1028,13 +481,15 @@
     <script>
         document.querySelectorAll('.sc-player').forEach(player => {
             const playBtn = player.querySelector('.sc-play-btn');
+            const skipBackBtn = player.querySelector('.sc-skip-back');
+            const skipFwdBtn = player.querySelector('.sc-skip-fwd');
             const iconPlay = player.querySelector('.icon-play');
             const iconPause = player.querySelector('.icon-pause');
             const waveform = player.querySelector('.sc-waveform');
             const timeDisplay = player.querySelector('.sc-time');
             const durationStr = player.getAttribute('data-duration') || '30:00';
 
-            // Build pseudo audio waveform visualizer (40 bars)
+            // Build waveform bars (40 bars)
             const barHeights = [30, 45, 75, 60, 40, 90, 100, 70, 50, 85, 95, 60, 40, 75, 80, 55, 30, 65, 85, 100, 90, 75, 50, 40, 70, 85, 60, 45, 80, 95, 70, 50, 35, 60, 75, 90, 65, 40, 30, 20];
             barHeights.forEach((h, idx) => {
                 const bar = document.createElement('div');
@@ -1045,8 +500,11 @@
             });
 
             let isPlaying = false;
-            let progress = 0;
+            let progress = 0; // 0 to 100%
             let timer = null;
+
+            const [totalMin, totalSec] = durationStr.split(':').map(Number);
+            const totalSeconds = (totalMin * 60) + totalSec;
 
             function updateWaveform() {
                 const bars = waveform.querySelectorAll('.sc-bar');
@@ -1059,15 +517,14 @@
                     }
                 });
 
-                // Update current time display
-                const [totalMin, totalSec] = durationStr.split(':').map(Number);
-                const totalSeconds = (totalMin * 60) + totalSec;
+                // Update current time text
                 const currentSeconds = Math.floor((progress / 100) * totalSeconds);
                 const curMin = Math.floor(currentSeconds / 60);
                 const curSec = (currentSeconds % 60).toString().padStart(2, '0');
                 timeDisplay.textContent = `${curMin}:${curSec} / ${durationStr}`;
             }
 
+            // Play / Pause toggle
             playBtn.addEventListener('click', () => {
                 isPlaying = !isPlaying;
                 if (isPlaying) {
@@ -1091,6 +548,20 @@
                 }
             });
 
+            // Rewind 15 Seconds
+            skipBackBtn.addEventListener('click', () => {
+                const deltaPercent = (15 / totalSeconds) * 100;
+                progress = Math.max(0, progress - deltaPercent);
+                updateWaveform();
+            });
+
+            // Fast Forward 15 Seconds
+            skipFwdBtn.addEventListener('click', () => {
+                const deltaPercent = (15 / totalSeconds) * 100;
+                progress = Math.min(100, progress + deltaPercent);
+                updateWaveform();
+            });
+
             // Click waveform to seek
             waveform.addEventListener('click', (e) => {
                 const rect = waveform.getBoundingClientRect();
@@ -1100,7 +571,7 @@
             });
         });
 
-        // Toggle Video Embed Drawer
+        // Toggle Video Drawer
         document.querySelectorAll('.episode-card').forEach(card => {
             const toggleBtn = card.querySelector('.toggle-video');
             const drawer = card.querySelector('.video-drawer');
