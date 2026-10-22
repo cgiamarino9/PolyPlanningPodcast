@@ -138,69 +138,73 @@
             line-height: 1.6;
             margin: 0 0 1.5rem 0;
         }
-        /* SoundCloud-Style Audio Card */
+        /* Sleek Audio Player Container */
         
-        .sc-audio-card {
-            background: var(--green);
+        .media-container {
+            background: #f2f4f0;
+            border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 0.85rem 1.1rem;
-            color: var(--cream);
-            box-shadow: 0 4px 14px rgba(24, 70, 56, 0.15);
+            padding: 1rem;
             display: flex;
             flex-direction: column;
-            gap: 0.6rem;
+            gap: 0.75rem;
         }
         
-        .sc-card-meta {
+        .media-header {
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
         }
         
-        .sc-card-tag {
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--coral);
+        .audio-label {
             display: flex;
             align-items: center;
-            gap: 0.35rem;
-        }
-        
-        .sc-btn {
-            background: rgba(255, 255, 255, 0.12);
-            color: var(--cream);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 0.3rem 0.65rem;
-            border-radius: 6px;
+            gap: 0.4rem;
             font-size: 0.75rem;
             font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--green);
+        }
+        
+        .audio-icon {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+        
+        .stream-link {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--green);
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
             text-decoration: none;
             transition: all 0.2s ease;
         }
         
-        .sc-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
-            color: #ffffff;
+        .stream-link:hover {
+            background: var(--green);
+            color: var(--cream);
+            border-color: var(--green);
         }
-        /* Adjusted Cropping Window: Height 80px reveals Play Button, Scrubber & Timer */
+        /* Compact 170px Height ensures all working iframe player controls remain visible */
         
-        .sc-crop-wrapper {
+        .iframe-wrapper {
             position: relative;
             width: 100%;
-            height: 80px;
-            overflow: hidden;
-            border-radius: 8px;
+            height: 170px;
             background: #000000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
         }
         
-        .sc-crop-wrapper iframe {
-            position: absolute;
+        .iframe-wrapper iframe {
             width: 100%;
-            height: 220px;
-            bottom: 0;
-            left: 0;
+            height: 100%;
             border: 0;
         }
         
@@ -208,8 +212,7 @@
             font-size: .85rem;
             color: var(--muted);
             font-style: italic;
-            margin-bottom: 0.5rem;
-            display: block;
+            padding: .25rem 0;
         }
         
         footer {
@@ -222,6 +225,9 @@
         @media (max-width: 720px) {
             .episode-card {
                 padding: 1.25rem;
+            }
+            .iframe-wrapper {
+                height: 150px;
             }
         }
     </style>
@@ -249,13 +255,17 @@
                         Chase Abramson (MURP 2027) interviews Christopher Pina, a Community Planner for the City of LA. They discussed how communities influence the planning activities one does, the differences between what is learned in school and what is carried out in professional
                         planning, and whether theory serves as an important guide when taking courses of action.
                     </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_ay662yg0" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
+                    <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode Player
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_ay662yg0" target="_blank" rel="noopener" class="stream-link">CPP Media ↗</a>
                         </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_ay662yg0" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 1"></iframe>
+                        <div class="iframe-wrapper">
+                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_ay662yg0" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 1"></iframe>
                         </div>
                     </div>
                 </article>
@@ -268,13 +278,17 @@
                         Oscar Alanis-Perez (MURP 2027) interviews Graham Rossmore, a Transportation Planning Associate II at the LADOT Parking Meters Division. They discussed the high cost of free parking, al fresco dining, active transportation safety, and the importance of
                         open deliberation to resolve conflicts.
                     </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_fim3tz0x" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
+                    <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode Player
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_fim3tz0x" target="_blank" rel="noopener" class="stream-link">CPP Media ↗</a>
                         </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_fim3tz0x" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 2"></iframe>
+                        <div class="iframe-wrapper">
+                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_fim3tz0x" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 2"></iframe>
                         </div>
                     </div>
                 </article>
@@ -287,337 +301,17 @@
                         Marciel Andrade (MURP 2027) interviews Michelle Rivera, a grassroots planner working with Public Matters and the Thai Community Development Center. They discussed bilingual outreach, effective community engagement, political and financial constraints,
                         and co-production to build and learn from residents' skills and knowledge.
                     </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_cc3rpgcd" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
+                    <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode Player
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_cc3rpgcd" target="_blank" rel="noopener" class="stream-link">CPP Media ↗</a>
                         </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_cc3rpgcd" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 3"></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Episode 4 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 4 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Candice Assadzadeh, Senior Planner (City of Riverside)</h2>
-                    <p class="episode-description">
-                        Moises Arreola (MURP 2027) interviews Candice Assadzadeh, a Senior Planner for the City of Riverside’s Planning Department. They discussed transactive planning approaches during conceptual reviews, environmental justice, and translation of ideas into
-                        outcomes in the built environment.
-                    </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_ebxehu2u" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                        </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_ebxehu2u" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 4"></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Episode 5 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 5 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Ivan Reyes, Planner (City of Paramount)</h2>
-                    <p class="episode-description">
-                        Ricardo Carrillo (MURP 2027) interviews Ivan Reyes, a Planner for the City of Paramount. They discussed the importance of technical knowledge and personal relationships in getting things done, diversity in the just city, and realizing deliberative democracy
-                        by making public meetings inclusive for Spanish-speaking residents.
-                    </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_h2sagw1p" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                        </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_h2sagw1p" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 5"></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Episode 6 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 6 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with John King, Planning and Building Director (City of Paramount)</h2>
-                    <p class="episode-description">
-                        Leslie Corrales (MURP 2027) interviews John King, Planning and Building Director for the City of Paramount. They discussed rational, communicative, and advocacy planning approaches when attempting to empower working-class Latino communities; the reciprocal
-                        relationship between theories and practical judgment; and the need for planners to remain reflexive about their values, institutional goals, and community desires.
-                    </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_3rw9ytdj" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                        </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_3rw9ytdj" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 6"></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Episode 7 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 7 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Tim Bretz, Senior Principal at Keyser Marston Associates</h2>
-                    <p class="episode-description">
-                        Kevin Debacker (MURP 2027) interviews Tim Bretz, a Senior Principal at Keyser Marston Associates. They discussed affordable housing justice, private-public partnerships, and translating complex data and ideas into practical, real-world actions, while
-                        addressing displacement.
-                    </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_5rjzd93z" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                        </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_5rjzd93z" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 7"></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Episode 8 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 8 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Jesus Navidad, Transportation Planner (CalTrans)</h2>
-                    <p class="episode-description">
-                        Charles Dinan (MURP 2027) interviews Jesus Navidad, a Transportation Planner for CalTrans. They discussed the different roles a planner adopts in the public and private sector, what planners do on their day-to-day, the various forms of public participation
-                        in shaping transportation policy, the political pressures that encourage oft-used rational planning solutions, and the need for advocacy planning to understand how people use transit infrastructure to improve its functions.
-                    </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_0vgbcnwm" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                        </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_0vgbcnwm" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 8"></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Episode 9 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 9 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Joseph Allen, Staff Transportation Planner (City of College Station, TX)</h2>
-                    <p class="episode-description">
-                        Daniela Flores (MURP 2027) interviews Joseph Allen, a Staff Transportation Planner for the City of College Station, Texas. They discussed switching from the private sector to participate in engaging, community-based active transportation projects; the
-                        importance of adaptable communication and persuasive storytelling to engage different groups and stakeholders in participation processes; and the need to listen reflectively and balance technical knowledge with local knowledge
-                        to improve planning project outcomes.
-                    </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_7ei5unac" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                        </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_7ei5unac" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 9"></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Episode 10 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 10 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Troy Evangelho, Advanced Planning Manager (Culver City)</h2>
-                    <p class="episode-description">
-                        Sean Fox (MURP 2027) interviews Troy Evangelho, Culver City’s Advanced Planning Manager. They discussed the Culver City 2045 General Plan, form-based codes, how theories are implicitly practiced, and the planner’s participatory and rational mentality.
-                    </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_g1elfnt7" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                        </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_g1elfnt7" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 10"></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Episode 11 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 11 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Mena Abdul, Associate Planner (City of Duarte)</h2>
-                    <p class="episode-description">
-                        Mariah Garcia (MURP 2027) interviews Mena Abdul, Associate Planner for the City of Duarte. They discussed communicative planning as consensus-building, reliance on technical knowledge related to zoning, the need to balance expertise with clear communication,
-                        and the power relations women confront in a male-dominated environment where principles of honesty, consistency, fairness, and ethics are constantly questioned.
-                    </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_i5ufj7b7" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                        </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_i5ufj7b7" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 11"></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Episode 12 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 12 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Alvar De La Torre, Assistant Planner (City of Covina)</h2>
-                    <p class="episode-description">
-                        Martin Gutierrez (MURP 2027) interviews Alvar De La Torre, an Assistant Planner for the City of Covina. They discussed common planning tasks, resolving deliberative conflicts, and the multidisciplinary skills that help to envision equitable futures related
-                        to housing shortages.
-                    </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_isg09wyu" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                        </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_isg09wyu" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 12"></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Episode 13 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 13 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Devan Wells, Assistant Planner (City of South Pasadena)</h2>
-                    <p class="episode-description">
-                        Carolina Ibarra (MURP 2027) interviews Devan Wells, an Assistant Planner for the City of South Pasadena. They discussed tensions between different scales of planning, advocacy planning being constrained by political pressures, and the requirement to balance
-                        theory and ethics with equitable and adaptable approaches to address evolving needs.
-                    </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_7yytpfit" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                        </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_7yytpfit" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 13"></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Episode 14 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 14 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Julie Fitch, Planning Manager (John Wayne Airport, OC)</h2>
-                    <p class="episode-description">
-                        Donya Kishawi (MURP 2027) interviews Julie Fitch, the Planning Manager for John Wayne Airport in Orange County, California. They discussed navigating multiple daily roles, ensuring compliance with environmental policies, and working with communities to
-                        mitigate noise and nuisance complaints.
-                    </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_yja10igw" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                        </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_yja10igw" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 14"></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Episode 15 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 15 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Paul Herrmann, Senior Associate (Fehr & Peers)</h2>
-                    <p class="episode-description">
-                        Daniel Knott (MURP 2027) interviews Paul Herrmann, Senior Associate and Planning Consultant at Fehr & Peers. They discussed that what planners do is connect people to information about deadlines and expectations, linking technical knowledge to logistical
-                        actions, negotiating and settling competing interests, and persuasive storytelling.
-                    </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_krtyoe1g" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                        </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_krtyoe1g" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 15"></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Episode 16 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 16 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Luca Giaramadaro, Vice President (Multistudio)</h2>
-                    <p class="episode-description">
-                        Henry Lie (MURP 2027) interviews Luca Giaramadaro, Vice President at Multistudio, a multidisciplinary planning firm. They discussed differences in planning education between America and Europe, with the former focusing on technical knowledge and quantitative
-                        methods compared to fluid, multidisciplinary practices; public space justice in transit environments; and ethical issues regarding AI.
-                    </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_5mwjhyfc" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                        </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_5mwjhyfc" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 16"></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Episode 17 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 17 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Jackie Martinez, Long Range Planner (City of Glendale)</h2>
-                    <p class="episode-description">
-                        Mike Matzke (MURP 2027) interviews Jackie Martinez, a Long Range Planner of Community Development with the City of Glendale. They discussed argumentation and communication with the Verdugo Wash project, translating technical jargon to different clients,
-                        and the importance of multidisciplinary technical skills in transportation and long-range planning.
-                    </p>
-                    <span class="pending-notice">Recording link coming soon.</span>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_4gg7t1lj" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                        </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_4gg7t1lj" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 17"></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Episode 18 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 18 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Jonathan Pacheco-Bell, Urban Planner</h2>
-                    <p class="episode-description">
-                        Aaron Mejia (MURP 2027) interviews Jonathan Pacheco-Bell, an urban planner shaping communities across Los Angeles County, with grassroots experience in advocacy planning for Florence-Firestone. They discussed the importance of trust, co-creation, and
-                        procedural justice; the importance of acknowledging historical injustices through equitable solutions today; and translating planning philosophies into placemaking and reclamation of space.
-                    </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_mu9lcuzl" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                        </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_mu9lcuzl" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 18"></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Episode 19 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 19 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Claudia Garcia, Assistant Director of Community Development (City of Vacaville)</h2>
-                    <p class="episode-description">
-                        Humberto Mendez Valadez (MURP 2027) interviews Claudia Garcia, Assistant Director of Community Development for the City of Vacaville. Having met at the APA conference in Monterey, they discussed planners’ knowledge and skill sets as reflective, equity
-                        planning in every step of the planning process, especially including silent voices, and the need to balance aspirational visions with practical outcomes based on realistic constraints.
-                    </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_mat1rqvd" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                        </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_mat1rqvd" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 19"></iframe>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Episode 20 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 20 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Jason Garcia-LoBue, Planning & Permit Manager (Tulare County)</h2>
-                    <p class="episode-description">
-                        Nicholas Murphy (MURP 2027) interviews Jason Garcia-LoBue, Planning & Permit Manager for Tulare County. They discussed the technical craft necessary for administrative work, balancing revenue generation with mitigating negative externalities for a collective
-                        good, and programs like Civic Sparks that address historical inequities and environmental injustices.
-                    </p>
-                    <div class="sc-audio-card">
-                        <div class="sc-card-meta">
-                            <span class="sc-card-tag">♫ Audio Player</span>
-                            <a href="https://streaming.cpp.edu/media/t/1_jason_garcia" target="_blank" rel="noopener" class="sc-btn">CPP Media ↗</a>
-                        </div>
-                        <div class="sc-crop-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_jason_garcia" allowfullscreen webkitallowfullscreen mozAllowFullScreen title="Episode 20"></iframe>
+                        <div class="iframe-wrapper">
+                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_cc3rpgcd" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 3"></iframe>
                         </div>
                     </div>
                 </article>
