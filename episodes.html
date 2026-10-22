@@ -138,43 +138,67 @@
             line-height: 1.6;
             margin: 0 0 1.5rem 0;
         }
+        /* Sleek Audio Player Container */
         
         .media-container {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.75rem;
+            background: #f2f4f0;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 0.85rem 1rem;
+        }
+        
+        .media-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .audio-label {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--green);
+        }
+        
+        .audio-icon {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
         }
         
         .iframe-wrapper {
             position: relative;
             width: 100%;
-            padding-top: 56.25%;
-            /* 16:9 Aspect Ratio */
-            background: #000000;
+            height: 90px;
+            background: var(--green);
             border-radius: 8px;
             overflow: hidden;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
         }
         
         .iframe-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             border: 0;
         }
         
         .stream-link {
-            align-self: flex-start;
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            font-size: .85rem;
+            gap: 0.35rem;
+            font-size: 0.78rem;
             font-weight: 600;
             color: var(--green);
-            background: var(--cream);
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: .5rem 1rem;
+            padding: 0.35rem 0.75rem;
             border-radius: 6px;
             text-decoration: none;
             transition: all 0.2s ease;
@@ -190,7 +214,7 @@
             font-size: .85rem;
             color: var(--muted);
             font-style: italic;
-            padding: .5rem 0;
+            padding: .25rem 0;
         }
         
         footer {
@@ -231,10 +255,17 @@
                         planning, and whether theory serves as an important guide when taking courses of action.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_ay662yg0" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_ay662yg0" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 1"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_ay662yg0" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -247,10 +278,17 @@
                         open deliberation to resolve conflicts.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_fim3tz0x" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_fim3tz0x" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 2"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_fim3tz0x" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -263,10 +301,17 @@
                         and co-production to build and learn from residents' skills and knowledge.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_cc3rpgcd" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_cc3rpgcd" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 3"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_cc3rpgcd" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -279,10 +324,17 @@
                         outcomes in the built environment.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_ebxehu2u" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_ebxehu2u" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 4"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_ebxehu2u" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -295,10 +347,17 @@
                         by making public meetings inclusive for Spanish-speaking residents.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_h2sagw1p" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_h2sagw1p" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 5"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_h2sagw1p" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -311,10 +370,17 @@
                         relationship between theories and practical judgment; and the need for planners to remain reflexive about their values, institutional goals, and community desires.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_3rw9ytdj" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_3rw9ytdj" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 6"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_3rw9ytdj" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -327,10 +393,17 @@
                         addressing displacement.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_5rjzd93z" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_5rjzd93z" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 7"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_5rjzd93z" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -343,10 +416,17 @@
                         in shaping transportation policy, the political pressures that encourage oft-used rational planning solutions, and the need for advocacy planning to understand how people use transit infrastructure to improve its functions.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_0vgbcnwm" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_0vgbcnwm" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 8"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_0vgbcnwm" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -360,10 +440,17 @@
                         to improve planning project outcomes.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_7ei5unac" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_7ei5unac" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 9"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_7ei5unac" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -375,10 +462,17 @@
                         Sean Fox (MURP 2027) interviews Troy Evangelho, Culver City’s Advanced Planning Manager. They discussed the Culver City 2045 General Plan, form-based codes, how theories are implicitly practiced, and the planner’s participatory and rational mentality.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_g1elfnt7" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_g1elfnt7" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 10"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_g1elfnt7" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -391,10 +485,17 @@
                         and the power relations women confront in a male-dominated environment where principles of honesty, consistency, fairness, and ethics are constantly questioned.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_i5ufj7b7" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_i5ufj7b7" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 11"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_i5ufj7b7" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -407,10 +508,17 @@
                         to housing shortages.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_isg09wyu" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_isg09wyu" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 12"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_isg09wyu" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -423,10 +531,17 @@
                         theory and ethics with equitable and adaptable approaches to address evolving needs.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_7yytpfit" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_7yytpfit" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 13"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_7yytpfit" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -439,10 +554,17 @@
                         mitigate noise and nuisance complaints.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_yja10igw" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_yja10igw" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 14"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_yja10igw" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -455,10 +577,17 @@
                         actions, negotiating and settling competing interests, and persuasive storytelling.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_krtyoe1g" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_krtyoe1g" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 15"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_krtyoe1g" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -471,10 +600,17 @@
                         methods compared to fluid, multidisciplinary practices; public space justice in transit environments; and ethical issues regarding AI.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_5mwjhyfc" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_5mwjhyfc" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 16"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_5mwjhyfc" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -487,11 +623,18 @@
                         and the importance of multidisciplinary technical skills in transportation and long-range planning.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_4gg7t1lj" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <span class="pending-notice">Recording link coming soon.</span>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_4gg7t1lj" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 17"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_4gg7t1lj" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -504,10 +647,17 @@
                         procedural justice; the importance of acknowledging historical injustices through equitable solutions today; and translating planning philosophies into placemaking and reclamation of space.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_mu9lcuzl" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_mu9lcuzl" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 18"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_mu9lcuzl" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -520,10 +670,17 @@
                         planning in every step of the planning process, especially including silent voices, and the need to balance aspirational visions with practical outcomes based on realistic constraints.
                     </p>
                     <div class="media-container">
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_mat1rqvd" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
+                        </div>
                         <div class="iframe-wrapper">
                             <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_mat1rqvd" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 19"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_mat1rqvd" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
@@ -536,64 +693,25 @@
                         good, and programs like Civic Sparks that address historical inequities and environmental injustices.
                     </p>
                     <div class="media-container">
-                        <div class="iframe-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_ug5ym5zg" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 20"></iframe>
+                        <div class="media-header">
+                            <div class="audio-label">
+                                <svg class="audio-icon" viewBox="0 0 24 24">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                                </svg> Audio Episode
+                            </div>
+                            <a href="https://streaming.cpp.edu/media/t/1_jason_garcia" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_ug5ym5zg" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
-                    </div>
-                </article>
-
-                <!-- Episode 21 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 21 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Ana Budnyk, Principal Planner (City of Bishop)</h2>
-                    <p class="episode-description">
-                        Bianca Ortega (MURP 2027) interviews Ana Budnyk, Principal Planner for the City of Bishop. They discussed the reputation and boundaries that small-town planners must uphold, the importance of expert facilitation, and the value of digestible language serving
-                        residents as customers.
-                    </p>
-                    <div class="media-container">
                         <div class="iframe-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_2jt0ysiy" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 21"></iframe>
+                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_jason_garcia" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 20"></iframe>
                         </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_2jt0ysiy" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
-                    </div>
-                </article>
-
-                <!-- Episode 22 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 22 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Eric Riley, Senior Planning Associate (KDI)</h2>
-                    <p class="episode-description">
-                        Vanessa Vaquerano (MURP 2027) interviews Eric Riley, Senior Planning Associate at Kounkuey Design Initiative (KDI). They discussed radical shifts from top-down planning to democratic placemaking and transformation of vacant lots; planners as future-oriented,
-                        visionary storytellers; and the value of planning for justice in process.
-                    </p>
-                    <div class="media-container">
-                        <div class="iframe-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_8v2vc1y0" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 22"></iframe>
-                        </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_8v2vc1y0" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
-                    </div>
-                </article>
-
-                <!-- Episode 23 -->
-                <article class="episode-card">
-                    <div class="episode-meta">Episode 23 · Fall 2025</div>
-                    <h2 class="episode-title">Interview with Christopher Palmer, Economic Development Manager (City of Carson)</h2>
-                    <p class="episode-description">
-                        Donovan Wright (Master’s in Public Administration 2026) interviews Christopher Palmer, an Economic Development Manager for the City of Carson. They discussed private redevelopment as a form of comprehensive planning in service of market rationality; how
-                        to build trust with NIMBYs; and what planners can do to produce environmental justice under rigidly designed work environments.
-                    </p>
-                    <div class="media-container">
-                        <div class="iframe-wrapper">
-                            <iframe src="https://streaming.cpp.edu/embed/secure/iframe/entryId/1_ken949uh" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" title="Episode 23"></iframe>
-                        </div>
-                        <a href="https://streaming.cpp.edu/media/t/1_ken949uh" target="_blank" rel="noopener" class="stream-link">Watch on CPP Media ↗</a>
                     </div>
                 </article>
 
             </div>
         </main>
-        <footer>Conversations for social-spatial justice</footer>
+        <footer>
+            Poly Planning Podcast
+        </footer>
     </div>
 </body>
 
